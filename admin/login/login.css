@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+}
+.login{
+    margin: 150px;
+}
+
+.divlogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-family: sans-serif;
+    color: #235275;
+}
+
+input{
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #235275;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #235275;
+    background-color: #F1F5F8;
+}
+
+input::placeholder{
+    color: #235275;
+}
+
+.btnSign{
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    color: green;
+    border: 2px solid green;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.btnSign:hover{
+    background-color: green;
+    color: white;
+}
+p{
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 0 ;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+span{
+    color: red;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./shopping.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../home/home.html">Home</a></li>
+                <li><a href="../product/product.html">Products</a></li>
+                <li><a href="../about/about.html">About</a></li>
+            </ul>
+            <p class="comfy">comfy</p>
+
+            <a href="../shopping/shopping.html">
+                <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                    <span class="cntcart">0</span>
+                </button></a>
+        </nav>
+    </header>
+
+    <div class="address">
+        <a href="../home/home.html">Home </a>
+        <p class="pSlesh">/</p>
+        <a href="../about/about.html">Basket</a>
+    </div>
+
+    <table class="table">
+        <thead class="thead">
+            <tr>
+                <th>Product</th>
+                <th>Prise</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+    </table>
+    <div class="divBtn">
+        <a class="btnBackMenu1  " href="../product/product.html"><button class="btnBackMenu">Return To Shop</button></a>
+
+        <div>
+            <button class="btnUpdateCard">Update Card</button>
+            <button class="btnRemoveCard">Remove All</button>
+        </div>
+    </div>
+
+    <div class="CardTotal">
+        <p class="pcard">Card Total</p>
+        <div class="divCardTotal">
+            <p class="pSubtotal">Subtotal:</p>
+            <b class="pParseTotal">$0</b>
+        </div>
+        <div class="divCardTotal divCardTotal2">
+            <p class="pShipping">Shipping:</p>
+            <p class="pFree">Free</p>
+        </div>
+        <div class="divflexEndbtn">
+            <button class="btnBuy">Procees to checkout</button>
+        </div>
+    </div>
+
+    <dialog class="DialogBuy">
+        Thank you for your purchase <span style="color: red;">❤</span>
+    </dialog>
+    <script src="./shopping.js"></script>
+</body>
+
+</html>
