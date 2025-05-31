@@ -105,7 +105,6 @@ header div {
     justify-content: start;
     gap: 20px;
     padding: 30px;
-    /* padding-left: 30px; */
 }
 
 .companyh1 {
@@ -342,7 +341,7 @@ a:active {
         justify-content: space-evenly;
     }
 
-    ul{
+    ul {
         gap: 5px;
     }
 
@@ -376,10 +375,6 @@ a:active {
         font-size: 40px;
     }
 
-    .sectionHome {
-        padding: 50px 10px;
-    }
-
 
     .card {
         width: 100%;
@@ -407,11 +402,13 @@ a:active {
 
     .catalog {
         width: 80%;
-        height: 350px;
+        margin: auto;
+        height: 300px;
+        padding: 10px;
     }
 
 
     .box {
-        width: 95%;
+        width: 94%;
     }
 }

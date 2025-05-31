@@ -7,7 +7,7 @@ import {
   search,
   searchStatus,
   changeStatus,
-  searchCot
+  searchCot,
 } from "./api.js";
 
 let box = document.querySelector(".box");
@@ -23,6 +23,10 @@ let searchCotegory = document.querySelector(".searchCotegory");
 let inpSearch = document.querySelector(".inpSearch");
 let btnNewProduct = document.querySelector(".btnNewProduct");
 
+let dialog = document.querySelectorAll(".dialog");
+let info = document.querySelectorAll(".info");
+
+
 let addDialog = document.querySelector(".addDialog");
 let addForm = document.querySelector(".addForm");
 let editDialog = document.querySelector(".editDialog");
@@ -37,8 +41,6 @@ let infoCotegory = document.querySelector(".infoCotegory");
 let infoPrice = document.querySelector(".infoPrice");
 let infoStatus = document.querySelector(".infoStatus");
 let infoId = document.querySelector(".infoId");
-
-
 
 searchCotegory.oninput = () => {
   searchCot(searchCotegory.value);
@@ -75,20 +77,25 @@ body.style.color = textColor;
 if (darkMode == "white") {
   darkLight.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>`;
   header.style.backgroundColor = darkMode;
+  dialog.forEach((e) => (e.style.backgroundColor = darkMode));
+  info.forEach((e) => (e.style.color = "black"));
 } else {
   darkLight.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">  <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg>`;
   header.style.backgroundColor = darkMode;
+  dialog.forEach((e) => (e.style.backgroundColor = darkMode));
+  info.forEach((e) => (e.style.color = "white"));
 }
 
 darkLight.onclick = () => {
-  if (localStorage.getItem("theme") === "white") {  
+  if (localStorage.getItem("theme") === "white") {
     darkLight.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">  <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg>`;
     localStorage.setItem("theme", "#222222");
     let darkMode = localStorage.getItem("theme");
     body.style.backgroundColor = darkMode;
     header.style.backgroundColor = darkMode;
-    addDialog.style.backgroundColor = darkMode;
-
+    dialog.forEach((e) => (e.style.backgroundColor = darkMode));
+    info.forEach((e) => (e.style.color = "white"));
+    
     localStorage.setItem("textColor", "white");
     let textColor = localStorage.getItem("textColor");
     body.style.color = textColor;
@@ -98,6 +105,8 @@ darkLight.onclick = () => {
     let darkMode = localStorage.getItem("theme");
     body.style.backgroundColor = darkMode;
     header.style.backgroundColor = darkMode;
+    dialog.forEach((e) => (e.style.backgroundColor = darkMode));
+    info.forEach((e) => (e.style.color = "black"));
 
     localStorage.setItem("textColor", "black");
     let textColor = localStorage.getItem("textColor");
@@ -205,9 +214,9 @@ export default function getData(data) {
     let check = document.createElement("input");
     check.type = "checkbox";
     check.checked = !e.productStatus;
-    check.onclick=()=>{
-        changeStatus(e)
-    }
+    check.onclick = () => {
+      changeStatus(e);
+    };
 
     card.classList.add("card");
     imgCard.classList.add("imgCard");
@@ -250,8 +259,6 @@ export function getInfo(e) {
   }`;
   infoStatus.style.color = e.productStatus ? "green" : "red";
   infoId.innerHTML = `id: ${e.id}`;
-
-  
 
   infoDialog.showModal();
 }
