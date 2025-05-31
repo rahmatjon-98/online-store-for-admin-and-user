@@ -4,23 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Page</title>
     <link rel="stylesheet" href="./admin.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </head>
 
-<body>
-    <div class="center">
-        <button class="btnSort">Sort</button>
-        <select class="statusSearch">
-            <option value="all">All</option>
-            <option value="active">Active</option>
-            <option value="inactive">Inctive</option>
-        </select>
-        <input type="text" class="inpSearch" placeholder="Search...">
-        <button class="btnNewProduct">New Product</button>
+<body class="body">
+    <div class="header">
+        <div class="center">
+            <button class="darkLight"></button>
+            <button class="btnSort">Sort</button>
+            <select class="statusStatus">
+                <option value="all">All</option>
+                <option value="active">On sale</option>
+                <option value="inactive">Not for sale</option>
+            </select>
+            <input type="text" class="inpSearch" placeholder="Search...">
+            <button class="btnNewProduct">New Product</button>
+            <select class="searchCotegory">
+                <option value="all">All</option>
+                <option value="Akea">Akea</option>
+                <option value="Marcos">Marcos</option>
+                <option value="Caressa">Caressa</option>
+                <option value="Liddy">Liddy</option>
+            </select>
+            <span class="cntprs">prs:</span>
+            <span class="cntProd">0</span>
+
+        </div>
+        <div class="address">
+            <a href="../home/home.html">Home </a>
+            <p class="pSlesh">/</p>
+            <a href="../product/product.html">Products</a>
+            <p class="pSlesh">/</p>
+            <a href="../about/about.html">About </a>
+            <p class="pSlesh">/</p>
+            <a href="../info/info.html">Info</a>
+            <p class="pSlesh">/</p>
+            <a href="../shopping/shopping.html">Shopping </a>
+            <p class="pSlesh">/</p>
+            <a href="../admin/login/login.html">Login</a>
+        </div>
     </div>
+
+    <dialog class="addDialog">
+        <form class="addForm">
+            <input type="text" name="addName" placeholder="Name..."><br><br>
+            <input type="text" name="addImage" placeholder="Image..."><br><br>
+            <input type="text" name="addDescription" placeholder="Description..."><br><br>
+            <input type="text" name="addColor" placeholder="Color..."><br><br>
+            <input type="text" name="addCotegory" placeholder="Cotegory..."><br><br>
+            <input type="text" name="addPrice" placeholder="Price..."><br><br>
+            <select name="addStatus">
+                <option value="active">On sale</option>
+                <option value="inactive">Not for sale</option>
+            </select><br><br>
+            <button>Save</button>
+            <button type="button" class="btnaddClose">Cancel</button>
+        </form>
+    </dialog>
+
+    <dialog class="editDialog">
+        <form class="editForm">
+            <input type="text" name="editName" placeholder="Name..."><br><br>
+            <input type="text" name="editImage" placeholder="Image..."><br><br>
+            <input type="text" name="editDescription" placeholder="Description..."><br><br>
+            <input type="text" name="editColor" placeholder="Color..."><br><br>
+            <input type="text" name="editCotegory" placeholder="Cotegory..."><br><br>
+            <input type="text" name="editPrice" placeholder="Price..."><br><br>
+            <select name="editStatus">
+                <option value="active">On sale</option>
+                <option value="inactive">Not for sale</option>
+            </select><br><br>
+            <button type="submit">Save</button>
+            <button type="button" class="btneditClose">Cancel</button>
+        </form>
+    </dialog>
+
+    <dialog class="infoDialog">
+        <div class="infodiv">
+            <img class="infoImage"></img>
+            <div class="infotext">
+                <div>
+                    <p class="infoName"></p>
+                    <p class="infoDescription"></p>
+                    <p class="infoColor"></p>
+                    <p class="infoCotegory"></p>
+                    <p class="infoPrice"></p>
+                    <p class="infoStatus"></p>
+                    <p class="infoId"></p>
+                </div>
+                <div class="btn">
+                    <button type="button" class="btninfoClose">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
 
     <div class="box"></div>
     <script type="module" src="./jsFiles/main.js"></script>

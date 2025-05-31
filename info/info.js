@@ -1,15 +1,63 @@
 let box = document.querySelector(".box");
 let cntcart = document.querySelector(".cntcart");
 
-let info = JSON.parse(localStorage.getItem("productId")) || [];
+let info = JSON.parse(localStorage.getItem("id")) || [];
 
 let product = JSON.parse(localStorage.getItem("data")) || [];
 
 let totalCnt = product.reduce((sum, el) => sum + el.cnt, 0);
 cntcart.innerHTML = totalCnt;
 
+let body = document.querySelector(".body");
+let header = document.querySelector(".header");
+let colorA = document.querySelectorAll(".colorA");
+let size6 = document.querySelector(".size-6");
+
+let darkLight = document.querySelector(".darkLight");
+
+let darkMode = localStorage.getItem("theme") || "white";
+localStorage.setItem("theme", darkMode);
+body.style.backgroundColor = darkMode;
+let textColor = localStorage.getItem("textColor") || "black";
+body.style.color = textColor;
+if (darkMode == "white") {
+  header.style.backgroundColor = darkMode;
+  size6.style.color = "black";
+  colorA.forEach((el) => (el.style.color = "black"));
+} else {
+  header.style.backgroundColor = darkMode;
+  size6.style.color = "white";
+  colorA.forEach((el) => (el.style.color = "white"));
+}
+
+darkLight.onclick = () => {
+  if (localStorage.getItem("theme") === "white") {
+    localStorage.setItem("theme", "#222222");
+    let darkMode = localStorage.getItem("theme");
+    body.style.backgroundColor = darkMode;
+    header.style.backgroundColor = darkMode;
+
+    localStorage.setItem("textColor", "white");
+    let textColor = localStorage.getItem("textColor");
+    body.style.color = textColor;
+    colorA.forEach((el) => (el.style.color = textColor));
+    size6.style.color = "white";
+  } else if (localStorage.getItem("theme") === "#222222") {
+    localStorage.setItem("theme", "white");
+    let darkMode = localStorage.getItem("theme");
+    body.style.backgroundColor = darkMode;
+    header.style.backgroundColor = darkMode;
+
+    localStorage.setItem("textColor", "black");
+    let textColor = localStorage.getItem("textColor");
+    body.style.color = textColor;
+    colorA.forEach((el) => (el.style.color = textColor));
+    size6.style.color = "black";
+  }
+};
+
 function addToCard(e) {
-  let index = product.findIndex((item) => item.productId === e.productId);
+  let index = product.findIndex((item) => item.id === e.id);
   if (index !== -1) {
     product[index].cnt = product[index].cnt + 1;
   } else {
@@ -38,6 +86,8 @@ function getData(e) {
   pName.classList.add("pName");
   pName.innerHTML = e.productName;
 
+  pName.style.color = "#a7a7a7"
+
   let pDescription = document.createElement("p");
   pDescription.classList.add("pDescription");
   pDescription.innerHTML = e.productDescription;
@@ -46,20 +96,15 @@ function getData(e) {
   pPrice.classList.add("pPrice");
   pPrice.innerHTML = `$${e.productPrice}`;
 
-  let pColor = document.createElement("p");
-  pColor.classList.add("pColor");
+  let pColors = document.createElement("div");
+  pColors.classList.add("pColors");
 
-  let pColor1 = document.createElement("div");
-  pColor1.classList.add("pColor1");
-  pColor1.innerHTML = "";
-  pColor1.style.color = e.productColor[0];
-  pColor1.style.backgroundColor = e.productColor[0];
-
-  let pColor2 = document.createElement("div");
-  pColor2.classList.add("pColor2");
-  pColor2.innerHTML = "";
-  pColor2.style.color = e.productColor[1];
-  pColor2.style.backgroundColor = e.productColor[1];
+  e.productColor.forEach((e) => {
+    let pColor = document.createElement("div");
+    pColor.classList.add("pColor");
+    pColor.style.backgroundColor = e;
+    pColors.append(pColor);
+  });
 
   let pCotegory = document.createElement("p");
   pCotegory.classList.add("pCotegory");
@@ -80,9 +125,7 @@ function getData(e) {
   let divPriceColor = document.createElement("div");
   divPriceColor.classList.add("divPriceColor");
 
-  pColor.append(pColor1, pColor2);
-
-  divPriceColor.append(pPrice, pColor);
+  divPriceColor.append(pPrice, pColors);
 
   div.append(pName, pCotegory, divPriceColor, pDescription, pStatus, btnShop);
 

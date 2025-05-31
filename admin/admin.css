@@ -2,25 +2,191 @@
     margin: 0;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+}
+
 .center {
-    padding: 20px;
     display: flex;
     gap: 20px;
     justify-content: center;
 }
 
+
+.address {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.address a,
+.pSlesh {
+    text-decoration: none;
+    color: #8a959d;
+    font-weight: 700;
+    font-family: sans-serif;
+    padding: 0 10px;
+}
+
+.address a:hover {
+    background-color: inherit;
+    transform: scale(1.2);
+}
+
 .box {
     display: flex;
     flex-wrap: wrap;
+    padding-top: 100px;
+    gap: 20px;
+    margin: auto;
+    width: 95%;
 }
 
+
 .card {
-    width: 23%;
+    width: 22%;
     padding: 10px;
-    flex: 0 0 auto;
 }
 
 .imgCard {
     width: 100%;
     height: 200px;
+    object-fit: cover;
+
+}
+
+.size-6 {
+    width: 24px;
+}
+
+.pStatus {
+    font-weight: 700;
+    font-family: sans-serif;
+    padding: 10px 0;
+}
+
+dialog {
+    margin: auto;
+    padding: 50px 100px;
+    border: none;
+    border-radius: 5px;
+}
+
+button,
+input,
+select {
+    margin: 0px;
+    background-color: rgb(255, 255, 255, 0.8);
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+
+input {
+    background-color: white;
+    width: 250px;
+}
+
+button {
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+button:hover{
+    background-color: #8a959d;
+    color: white;
+}
+
+.check {
+    width: 18px;
+    height: 18px;
+}
+
+/* /// */
+
+.infodiv {
+    display: flex;
+}
+
+.infotext {
+    width: 400px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn{
+    display: flex;
+    justify-content: end;
+}
+
+.infoImage {
+    width: 450px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.infoStatus {
+    padding: 2px 0;
+    font-size: 15px;
+    font-weight: 900;
+    font-family: sans-serif;
+}
+
+.infoName {
+    color: #222222;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 120%;
+    letter-spacing: 0%;
+}
+
+.infoDescription {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    color: #235275;
+}
+
+.infoPrice {
+    font-family: sans-serif;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #235275;
+}
+
+.infoColor,
+.infoCotegory,
+.infoId {
+    padding: 2px;
+}
+
+
+.cntProd {
+    /* margin: 5px 0px; */
+    font-size: 25px;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.786);
+    width: 30px;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.cntprs {
+    padding: 8px;
+    /* margin: 8px 0px; */
+    font-size: 20px;
 }

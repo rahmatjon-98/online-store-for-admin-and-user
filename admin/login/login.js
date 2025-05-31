@@ -25,8 +25,8 @@ btnSign.onclick = async () => {
       inpEmail.value == adminData.adminEmail &&
       inpPassword.value == adminData.password
     ) {
-      window.location = "../admin.html";
       localStorage.setItem("admin", "admin");
+      window.location = "../admin.html";
     } else {
       alert("Incorrect login or password. Try again.");
     }

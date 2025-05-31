@@ -86,7 +86,7 @@ header div {
     font-weight: 600;
     font-style: normal;
     font-size: 50px;
-    padding-right: 350px;
+    padding-right: 100px;
 }
 
 /*//////////////////// section //////////////////////////*/
@@ -175,14 +175,11 @@ a:active {
 .pPrice {
     font-weight: 700;
     font-size: 25px;
-    color: #00000061;
+    /* color: #00000061; */
     font-family: sans-serif;
     padding: 10px;
 }
 
-.pPrice {
-    color: black;
-}
 
 
 .allProduct {
@@ -203,19 +200,23 @@ a:active {
     opacity: 0;
     position: absolute;
     top: 100px;
-    left: calc(50% - 140px);
+    left: calc(50% - 90px);
     padding: 10px;
-    background-color: #BA5D2C;
+    background-color: #ba5e2c;
     color: white;
     font-weight: 700;
-    font-size: 18px;
     border-radius: 5px;
     border: none;
     font-family: sans-serif;
 }
 
+.btnInfo .size-6,
+.btnShop .size-6 {
+    width: 25px;
+}
+
 .btnShop {
-    left: calc(50% - -20px);
+    left: calc(50% - -50px);
 }
 
 .card:hover .btnInfo,
@@ -268,6 +269,61 @@ a:active {
     transform: scale(1.2);
 }
 
+/* From Uiverse.io by andrew-demchenk0 */
+.theme {
+    --bg-color: #111;
+    --main-color: rgb(220, 220, 220);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-color);
+    border-radius: 100%;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+}
+
+.input {
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: 0;
+}
+
+.icon {
+    position: absolute;
+    top: calc(50% -13px);
+    left: calc(50% -13px);
+    width: 26px;
+    height: 26px;
+}
+
+.icon.icon-moon {
+    fill: var(--main-color);
+}
+
+.icon.icon-sun {
+    stroke: var(--main-color);
+    display: none;
+}
+
+.input:checked~.icon.icon-sun {
+    display: block;
+}
+
+.input:checked~.icon.icon-moon {
+    display: none;
+}
+
+.theme:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
+}
+
 
 @media (max-width:640px) {
     header {
@@ -275,7 +331,7 @@ a:active {
     }
 
     nav ul li a {
-        font-size: 20px;
+        font-size: 17px;
         padding: 5px;
     }
 
@@ -284,6 +340,10 @@ a:active {
         flex-wrap: wrap;
         padding: 30px 0px;
         justify-content: space-evenly;
+    }
+
+    ul{
+        gap: 5px;
     }
 
     .size-6 {
@@ -316,51 +376,42 @@ a:active {
         font-size: 40px;
     }
 
-    .sectionHome{
+    .sectionHome {
         padding: 50px 10px;
     }
 
-    .scrollDiv {
-        margin:  0px;
-    }
-    .card{
+
+    .card {
         width: 100%;
     }
 
-    .scrollLeft,.scrollRight{
-        padding: 10px;
-        font-size: 12px;
-    }
-    .allProduct{
+    .pName,
+    .pPrice {
         font-size: 18px;
     }
 
-    .pName,.pPrice{
-        font-size: 18px;
-    }
-
-    .btnInfo,.btnShop{
+    .btnInfo,
+    .btnShop {
         font-size: 12px;
-        left: calc(50% - 110px);
+        left: calc(50% - 90px);
     }
-    .btnShop{
-        left: calc(50% - -20px);
+
+    .btnShop {
+        left: calc(50% - -50px);
 
     }
 
-    .sectionProduct{
+    .sectionProduct {
         display: block;
     }
-    .catalog{
+
+    .catalog {
         width: 80%;
-        height: 20px;
-        opacity: 0;
-    }
-    .catalog:hover{
-        height: 350px;opacity: 1;
+        height: 350px;
     }
 
-    .box{
+
+    .box {
         width: 95%;
     }
 }
