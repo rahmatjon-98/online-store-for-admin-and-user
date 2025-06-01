@@ -6,7 +6,9 @@ async function get() {
   try {
     let { data } = await axios.get(api);
     getData(data);
-  } catch (error) {}
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 async function sortProduct() {
@@ -15,21 +17,27 @@ async function sortProduct() {
     data.sort((a, b) => a.productName.localeCompare(b.productName));
     localStorage.setItem("sort", JSON.stringify(data));
     getData(data);
-  } catch (error) {}
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 async function addProduct(newProduct) {
   try {
     await axios.post(api, newProduct);
     get();
-  } catch (error) {}
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 async function editProduct(newProduct, id) {
   try {
     await axios.put(`${api}/${id}`, newProduct);
     get();
-  } catch (error) {}
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 async function deleteProduct(id) {
@@ -37,7 +45,9 @@ async function deleteProduct(id) {
     let { data } = await axios.delete(`${api}/${id}`);
     console.log(data);
     get();
-  } catch (error) {}
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 async function changeStatus(e) {
@@ -47,7 +57,9 @@ async function changeStatus(e) {
       productStatus: !e.productStatus,
     });
     get();
-  } catch (error) {}
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 async function infoProduct(id) {
@@ -55,14 +67,18 @@ async function infoProduct(id) {
     let { data } = await axios.get(`${api}/${id}`);
     console.log(data);
     getInfo(data);
-  } catch (error) {}
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 async function search(value) {
   try {
     let { data } = await axios.get(`${api}?productName=${value}`);
     getData(data);
-  } catch (error) {}
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 async function searchCot(value) {
@@ -72,7 +88,9 @@ async function searchCot(value) {
     try {
       let { data } = await axios.get(`${api}?productCotegory=${value}`);
       getData(data);
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 
@@ -85,7 +103,18 @@ async function searchStatus(value) {
         `${api}?productStatus=${value == "active"}`
       );
       getData(data);
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
+  }
+}
+
+async function rangeChange(max) {
+  try {
+    let { data } = await axios.get(api);
+    getData(data.filter((e) => e.productPrice <= max));
+  } catch (error) {
+    console.error(error);
   }
 }
 
@@ -101,4 +130,5 @@ export {
   searchStatus,
   changeStatus,
   searchCot,
+  rangeChange,
 };

@@ -8,6 +8,7 @@ import {
   searchStatus,
   changeStatus,
   searchCot,
+  rangeChange,
 } from "./api.js";
 
 let box = document.querySelector(".box");
@@ -26,7 +27,6 @@ let btnNewProduct = document.querySelector(".btnNewProduct");
 let dialog = document.querySelectorAll(".dialog");
 let info = document.querySelectorAll(".info");
 
-
 let addDialog = document.querySelector(".addDialog");
 let addForm = document.querySelector(".addForm");
 let editDialog = document.querySelector(".editDialog");
@@ -41,6 +41,15 @@ let infoCotegory = document.querySelector(".infoCotegory");
 let infoPrice = document.querySelector(".infoPrice");
 let infoStatus = document.querySelector(".infoStatus");
 let infoId = document.querySelector(".infoId");
+let parseValue = document.querySelector(".parseValue");
+let inpRange = document.querySelector(".inpRange");
+
+inpRange.onchange = () => {
+  let maxNum = Number(inpRange.value);
+  inpRange.innerHTML = maxNum;
+  rangeChange(maxNum);
+  parseValue.innerHTML = `$${maxNum}`;
+};
 
 searchCotegory.oninput = () => {
   searchCot(searchCotegory.value);
@@ -95,7 +104,7 @@ darkLight.onclick = () => {
     header.style.backgroundColor = darkMode;
     dialog.forEach((e) => (e.style.backgroundColor = darkMode));
     info.forEach((e) => (e.style.color = "white"));
-    
+
     localStorage.setItem("textColor", "white");
     let textColor = localStorage.getItem("textColor");
     body.style.color = textColor;

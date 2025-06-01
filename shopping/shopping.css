@@ -394,6 +394,7 @@ a:active {
 
     ul {
         gap: 5px;
+        padding: 0 10px;
     }
 
     .size-6 {

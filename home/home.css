@@ -91,15 +91,17 @@ header div {
     font-weight: 600;
     font-style: normal;
     font-size: 50px;
-    margin-right: 0px;
+    margin-left: 50px;
 }
 
 .loginadm2 {
+    background-color: rgb(66, 114, 158);
     color: white;
     font-family: sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     padding: 10px 15px;
     margin-left:0px;
+    border-radius: 5px;
 }
 
 .prest1 {
@@ -341,7 +343,8 @@ a:active {
     }
 
     ul{
-        gap: 5px;
+        gap: 0px;
+        padding: 0 10px;
     }
 
     nav {
@@ -423,6 +426,6 @@ a:active {
         color: white;
         font-family: sans-serif;
         font-size: 20px;
-        padding: 10px 15px;
+        padding: 5px ;
     }   
 }

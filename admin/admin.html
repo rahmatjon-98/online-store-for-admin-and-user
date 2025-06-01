@@ -13,9 +13,7 @@
 <body class="body">
     <div class="header">
         <div class="center">
-            <div class="address">
-                <a href="../home/home.html">Home </a>
-            </div>
+
             <!-- From Uiverse.io by andrew-demchenk0 -->
             <label class="theme darkLight">
                 <input type="checkbox" checked="checked" class="input">
@@ -44,27 +42,47 @@
         </div>
     </div>
 
-    <div class="" style="display: flex;">
-        <div style="padding-top: 100px; width: 20%;">
-            <span class="cntprs">prs:</span>
-            <span class="cntProd">0</span><br><br>
-            <button class="btnSort">Sort</button><br><br>
-            <label for="">Status:</label>
-            <select class="statusStatus">
-                <option value="all">All</option>
-                <option value="active">On sale</option>
-                <option value="inactive">Not for sale</option>
-            </select><br><br>
+    <div class="section">
+        <div class="setting">
+            <div class="address">
+                <a href="../home/home.html">Home </a>
+            </div>
+            <div class="divsort">
+                <div class="divcnt">
+                    <span class="cntprs">quantity:</span>
+                    <span class="cntProd">0</span><br><br>
+                </div>
+                <button class="btnSort">Sort</button><br><br>
+            </div>
 
-            <label for="">Cotegory:</label>
-            <select class="searchCotegory">
-                <option value="all">All</option>
-                <option value="Akea">Akea</option>
-                <option value="Marcos">Marcos</option>
-                <option value="Caressa">Caressa</option>
-                <option value="Liddy">Liddy</option>
-            </select>
+            <div class="divSelect">
+                <div>
+                    <label for="">Status:</label><br>
+                    <select class="statusStatus">
+                        <option value="all">All</option>
+                        <option value="active">On sale</option>
+                        <option value="inactive">Not for sale</option>
+                    </select><br><br>
+                </div>
+                <div>
+                    <label for="">Cotegory:</label><br>
+                    <select class="searchCotegory">
+                        <option value="all">All</option>
+                        <option value="Akea">Akea</option>
+                        <option value="Marcos">Marcos</option>
+                        <option value="Caressa">Caressa</option>
+                        <option value="Liddy">Liddy</option>
+                    </select><br><br>
+                </div>
+            </div>
+
+            <input type="range" max="1000" min="10" step="10" value="1000" class="inpRange">
+            <div class="inpRange" style="display: flex;width: 100%; justify-content: space-between;">
+                <span>$10 </span><span> $1000</span>
+            </div><br>
+            <span>Value: <span class="parseValue">$1000</span></span>
         </div>
+
         <div class="box"></div>
     </div>
 

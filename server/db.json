@@ -385,6 +385,16 @@
       "productCotegory": "Caressa",
       "productStatus": true,
       "id": "1748686683386"
+    },
+    {
+      "id": "1748719604705",
+      "productName": "",
+      "productImage": "",
+      "productDescription": "",
+      "productPrice": "",
+      "productColor": "",
+      "productCotegory": "",
+      "productStatus": "active"
     }
   ],
   "admin": [
