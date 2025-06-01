@@ -193,7 +193,7 @@ function getData(data) {
 
     let narx = Number(e.productPrice) * e.cnt;
     numParseTotal += narx;
-    pParseTotal.innerHTML = `$${numParseTotal}`;
+    pParseTotal.innerHTML = `$${numParseTotal.toFixed(2)}`;
 
     let btndele = document.createElement("button");
     btndele.classList.add("btndele");
@@ -219,7 +219,7 @@ function getData(data) {
 
     let divSubtotal = document.createElement("divSubtotal");
     divSubtotal.classList.add("divSubtotal");
-    divSubtotal.append(`$${narx}`, btndele);
+    divSubtotal.append(`$${narx.toFixed(2)}`, btndele);
     tdSubtotal.append(divSubtotal);
 
     trtbody.append(tdProduct, tdPrice, tdQuantity, tdSubtotal);
