@@ -44,6 +44,14 @@ let infoId = document.querySelector(".infoId");
 let parseValue = document.querySelector(".parseValue");
 let inpRange = document.querySelector(".inpRange");
 
+let addCreatenew = document.querySelector(".addCreatenew");
+let addColors = document.querySelector(".addColors");
+let btnaddColorDel = document.querySelector(".btnaddColorDel");
+
+let editCreatenew = document.querySelector(".editCreatenew");
+let editColors = document.querySelector(".editColors");
+let btneditColorDel = document.querySelector(".btneditColorDel");
+
 inpRange.onchange = () => {
   let maxNum = Number(inpRange.value);
   inpRange.innerHTML = maxNum;
@@ -131,14 +139,46 @@ btnNewProduct.onclick = () => {
   addDialog.showModal();
 };
 
+let oldColor = [];
+
+let color = [];
+
+addCreatenew.onclick = () => {
+  let divColor = document.createElement("div");
+  color.push(addForm["addColor"].value);
+  divColor.classList.add("divColor");
+  divColor.style.backgroundColor = addForm["addColor"].value;
+  addColors.append(divColor);
+};
+
+btnaddColorDel.onclick = () => {
+  color = [];
+  addColors.innerHTML = "";
+};
+
+editCreatenew.onclick = () => {
+  color.push();
+  color.push(editForm["editColor"].value);
+  let divColor = document.createElement("div");
+  divColor.classList.add("divColor");
+  divColor.style.backgroundColor = editForm["editColor"].value;
+  editColors.append(divColor);
+};
+
+btneditColorDel.onclick = () => {
+  color = [];
+  editColors.innerHTML = "";
+};
+
 addForm.onsubmit = (ev) => {
   ev.preventDefault();
+
   let newProduct = {
     productName: ev.target["addName"].value,
     productImage: ev.target["addImage"].value,
     productDescription: ev.target["addDescription"].value,
     productPrice: ev.target["addPrice"].value,
-    productColor: ev.target["addColor"].value,
+    productColor: color,
     productCotegory: ev.target["addCotegory"].value,
     id: Date.now().toString(),
     productStatus: ev.target["addStatus"].value,
@@ -149,17 +189,19 @@ addForm.onsubmit = (ev) => {
 
 editDialog.onsubmit = (ev) => {
   ev.preventDefault();
+
   let newProduct = {
     productName: ev.target["editName"].value,
     productImage: ev.target["editImage"].value,
     productDescription: ev.target["editDescription"].value,
     productPrice: ev.target["editPrice"].value,
-    productColor: ev.target["editColor"].value,
+    productColor: color,
     productCotegory: ev.target["editCotegory"].value,
     productStatus: ev.target["editStatus"].value == "active",
   };
   editProduct(newProduct, idx);
   editDialog.close();
+  color = []
 };
 
 export default function getData(data) {
@@ -209,7 +251,19 @@ export default function getData(data) {
       editForm["editImage"].value = e.productImage;
       editForm["editDescription"].value = e.productDescription;
       editForm["editPrice"].value = e.productPrice;
-      editForm["editColor"].value = e.productColor;
+
+      color = color.concat(e.productColor);
+      console.log(color);
+      
+
+      editColors.innerHTML = "";
+      e.productColor.forEach((e) => {
+        let divColor = document.createElement("divColor");
+        divColor.classList.add("divColor");
+        divColor.style.backgroundColor = e;
+        editColors.append(divColor);
+      });
+
       editForm["editCotegory"].value = e.productCotegory;
       editForm["editStatus"].value = e.productStatus ? "active" : "inactive";
       idx = e.id;
@@ -222,7 +276,7 @@ export default function getData(data) {
 
     let check = document.createElement("input");
     check.type = "checkbox";
-    check.checked = !e.productStatus;
+    check.checked = e.productStatus;
     check.onclick = () => {
       changeStatus(e);
     };
@@ -257,10 +311,20 @@ export default function getData(data) {
 }
 
 export function getInfo(e) {
+  infoColor.innerHTML = "";
+
   infoName.innerHTML = `<b>name:</b> ${e.productName}`;
   infoImage.src = e.productImage;
   infoDescription.innerHTML = `<b>description:</b> ${e.productDescription}`;
-  infoColor.innerHTML = `<b>color:</b> ${e.productColor}`;
+
+  infoColor.append("color:");
+  e.productColor.forEach((e) => {
+    let divinfocolor = document.createElement("divinfocolor");
+    divinfocolor.classList.add("divinfocolor");
+    divinfocolor.style.backgroundColor = e;
+    infoColor.append(divinfocolor);
+  });
+
   infoCotegory.innerHTML = `<b>cotegory:</b> ${e.productCotegory}`;
   infoPrice.innerHTML = `<b>price:</b> $${e.productPrice}`;
   infoStatus.innerHTML = `status: ${
@@ -271,3 +335,4 @@ export function getInfo(e) {
 
   infoDialog.showModal();
 }
+console.log(color);

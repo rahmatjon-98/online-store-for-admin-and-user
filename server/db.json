@@ -1,16 +1,11 @@
 {
   "product": [
     {
-      "productName": "Modern Chair",
-      "productImage": "https://klen.ua/modules/ph_simpleblog/covers/102.jpg",
+      "productName": "Entertainment Center",
+      "productImage": "https://mebelzakaz5.by/wp-content/uploads/2018/10/kuhni-pod-zakaz-katalog.jpg",
       "productDescription": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge ",
-      "productPrice": "750.73",
-      "productColor": [
-        "blue",
-        "white",
-        "red",
-        "green"
-      ],
+      "productPrice": "249",
+      "productColor": [],
       "productCotegory": "Akea",
       "productStatus": true,
       "id": "1"
@@ -21,22 +16,13 @@
       "productDescription": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge ",
       "productPrice": "890",
       "productColor": [
-        "red",
-        "black"
+        "#000000",
+        "#000000",
+        "#000000"
       ],
       "productCotegory": "Marcos",
       "productStatus": false,
       "id": "6"
-    },
-    {
-      "productName": "Entertainment Center",
-      "productImage": "https://mebelzakaz5.by/wp-content/uploads/2018/10/kuhni-pod-zakaz-katalog.jpg",
-      "productDescription": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge ",
-      "productPrice": "249",
-      "productColor": "red,white",
-      "productCotegory": "Caressa",
-      "productStatus": true,
-      "id": "7"
     },
     {
       "productName": "Sofa bed",
@@ -44,8 +30,8 @@
       "productDescription": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge ",
       "productPrice": "670",
       "productColor": [
-        "green",
-        "black"
+        "#f00000",
+        "#0bf93b"
       ],
       "productCotegory": "Liddy",
       "productStatus": false,
@@ -70,8 +56,7 @@
       "productDescription": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge ",
       "productPrice": "120",
       "productColor": [
-        "green",
-        "brown"
+        "#000000"
       ],
       "productCotegory": "Marcos",
       "productStatus": false,
@@ -266,7 +251,7 @@
       "productPrice": "90",
       "productColor": [
         "white",
-        "oak"
+        "green"
       ],
       "productCotegory": "Liddy",
       "productStatus": true,
@@ -370,31 +355,30 @@
       "productPrice": "90",
       "productColor": [
         "white",
-        "oak"
+        "green",
+        "#e61e1e",
+        "#2e07ed"
       ],
       "productCotegory": "Liddy",
       "productStatus": true,
       "id": "33"
     },
     {
-      "productName": "Entertainment Center",
-      "productImage": "https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?semt=ais_hybrid&w=740",
-      "productDescription": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge ",
-      "productPrice": "249",
-      "productColor": "red,white",
-      "productCotegory": "Caressa",
+      "productName": "salim",
+      "productImage": "https://storage.yandexcloud.net/storage.yasno.media/nat-geo/images/2020/6/25/0fc978aba29e466e8eb4ffc946532d5e.max-1200x800.jpg",
+      "productDescription": "as",
+      "productPrice": "112",
+      "productColor": [
+        "#000000",
+        "#ff0000",
+        "#a124f5",
+        "#ffffff",
+        "#000000",
+        "#e6950a"
+      ],
+      "productCotegory": "agf",
       "productStatus": true,
-      "id": "1748686683386"
-    },
-    {
-      "id": "1748719604705",
-      "productName": "",
-      "productImage": "",
-      "productDescription": "",
-      "productPrice": "",
-      "productColor": "",
-      "productCotegory": "",
-      "productStatus": "active"
+      "id": "1748887543936"
     }
   ],
   "admin": [

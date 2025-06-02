@@ -49,8 +49,8 @@
             </div>
             <div class="divsort">
                 <div class="divcnt">
-                    <span class="cntprs">quantity:</span>
-                    <span class="cntProd">0</span><br><br>
+                    <span class="cntprs">Quantity: </span>
+                    <span class="cntProd"> 0</span><br><br>
                 </div>
                 <button class="btnSort">Sort</button><br><br>
             </div>
@@ -91,8 +91,21 @@
         <form class="addForm">
             <input type="text" name="addName" placeholder="Name..."><br><br>
             <input type="text" name="addImage" placeholder="Image..."><br><br>
-            <input type="text" name="addDescription" placeholder="Description..."><br><br>
-            <input type="text" name="addColor" placeholder="Color..."><br><br>
+            <input type="text" name="addDescription" placeholder="Description..."><br>
+
+            <div style=" padding: 10px 0;">
+                <div style="display: flex; justify-content: space-between; width: 280px; padding: 10px 0;">
+                    <p>Color:</p>
+                    <button type="button" class="addCreatenew">Create New</button>
+                </div>
+                <input style="width: 280px;" type="color" name="addColor" placeholder="Color...">
+            </div>
+            <div style="display: flex; align-items: center;">
+                <div class="addColors"></div>
+                <button type="button" style="background-color: red; color: white;padding: 7px 12px;"
+                    class="btnaddColorDel">X</button>
+            </div>
+
             <input type="text" name="addCotegory" placeholder="Cotegory..."><br><br>
             <input type="text" name="addPrice" placeholder="Price..."><br><br>
             <select name="addStatus">
@@ -104,12 +117,27 @@
         </form>
     </dialog>
 
+
+
     <dialog class="editDialog dialog">
         <form class="editForm">
             <input type="text" name="editName" placeholder="Name..."><br><br>
             <input type="text" name="editImage" placeholder="Image..."><br><br>
             <input type="text" name="editDescription" placeholder="Description..."><br><br>
-            <input type="text" name="editColor" placeholder="Color..."><br><br>
+
+            <div style=" padding: 10px 0;">
+                <div style="display: flex; justify-content: space-between; width: 280px; padding: 10px 0;">
+                    <p>Color:</p>
+                    <button type="button" class="editCreatenew">Create New</button>
+                </div>
+                <input style="width: 280px;" type="color" name="editColor" placeholder="Color...">
+            </div>
+            <div style="display: flex; align-items: center;">
+                <div class="editColors"></div>
+                <button type="button" style="background-color: red; color: white;padding: 7px 12px;"
+                    class="btneditColorDel">X</button>
+            </div>
+
             <input type="text" name="editCotegory" placeholder="Cotegory..."><br><br>
             <input type="text" name="editPrice" placeholder="Price..."><br><br>
             <select name="editStatus">
@@ -121,6 +149,8 @@
         </form>
     </dialog>
 
+
+    
     <dialog class="infoDialog dialog">
         <div class="infodiv">
             <img class="infoImage"></img>
@@ -128,7 +158,7 @@
                 <div>
                     <p class="info infoName"></p>
                     <p class="infoDescription"></p>
-                    <p class="info infoColor"></p>
+                    <div class="info infoColor"></div>
                     <p class="info infoCotegory"></p>
                     <p class="infoPrice"></p>
                     <p class="infoStatus"></p>

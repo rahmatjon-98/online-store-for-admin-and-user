@@ -79,14 +79,14 @@ function getData(e) {
   imgCard.classList.add("imgCard");
   imgCard.src = e.productImage;
 
-  let div = document.createElement("div");
-  div.classList.add("div");
+  let divText = document.createElement("div");
+  divText.classList.add("divText");
 
   let pName = document.createElement("p");
   pName.classList.add("pName");
   pName.innerHTML = e.productName;
 
-  pName.style.color = "#a7a7a7"
+  pName.style.color = "#a7a7a7";
 
   let pDescription = document.createElement("p");
   pDescription.classList.add("pDescription");
@@ -124,12 +124,19 @@ function getData(e) {
 
   let divPriceColor = document.createElement("div");
   divPriceColor.classList.add("divPriceColor");
-
   divPriceColor.append(pPrice, pColors);
 
-  div.append(pName, pCotegory, divPriceColor, pDescription, pStatus, btnShop);
+  let divbtnShop = document.createElement("div");
+  divbtnShop.classList.add("divbtnShop");
+  divbtnShop.append(btnShop);
 
-  card.append(imgCard, div);
+  let divCard = document.createElement("div");
+  divCard.classList.add("divCard");
+  divCard.append(pName, pCotegory, divPriceColor, pDescription, pStatus);
+
+  divText.append(divCard, divbtnShop);
+
+  card.append(imgCard, divText);
   box.append(card);
 }
 getData(info);

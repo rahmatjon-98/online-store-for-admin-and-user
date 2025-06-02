@@ -15,7 +15,6 @@ async function sortProduct() {
   try {
     let { data } = await axios.get(api);
     data.sort((a, b) => a.productName.localeCompare(b.productName));
-    localStorage.setItem("sort", JSON.stringify(data));
     getData(data);
   } catch (error) {
     console.error(error);
@@ -65,7 +64,6 @@ async function changeStatus(e) {
 async function infoProduct(id) {
   try {
     let { data } = await axios.get(`${api}/${id}`);
-    console.log(data);
     getInfo(data);
   } catch (error) {
     console.error(error);

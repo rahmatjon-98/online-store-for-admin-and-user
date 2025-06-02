@@ -203,12 +203,42 @@ button:hover {
     color: #235275;
 }
 
-.infoColor,
 .infoCotegory,
 .infoId {
     padding: 2px;
 }
 
+.infoColor{
+    display: flex; gap: 10px;
+}
+
+.addColors {
+    width: 225px;
+    border-radius: 5px;
+    padding: 5px;
+    height: 20px;
+    border: 1px solid black;
+    margin: 10px 0;
+    display: flex;
+    gap: 10px;
+}
+.editColors {
+    width: 225px;
+    border-radius: 5px;
+    padding: 5px;
+    height: 20px;
+    border: 1px solid black;
+    margin: 10px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.divColor,.divinfocolor{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
 
 .cntProd {
     font-size: 18px;
@@ -242,8 +272,8 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color: var(--bg-color);
     border-radius: 100%;
     border: 2px solid var(--main-color);

@@ -143,8 +143,12 @@ a:active {
     object-fit: cover;
 }
 
-.div {
+.divText {
     padding: 0 30px;
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .pName {
@@ -234,8 +238,8 @@ a:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color: var(--bg-color);
     border-radius: 100%;
     border: 2px solid var(--main-color);
@@ -305,7 +309,7 @@ a:active {
     }
 
     .size-6 {
-        width: 40px;
+        width: 30px;
     }
 
     .cntcart {

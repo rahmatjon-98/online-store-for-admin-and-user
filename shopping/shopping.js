@@ -58,7 +58,7 @@ darkLight.onclick = () => {
     let darkMode = localStorage.getItem("theme");
     body.style.backgroundColor = darkMode;
     header.style.backgroundColor = darkMode;
-    
+
     localStorage.setItem("textColor", "white");
     let textColor = localStorage.getItem("textColor");
     body.style.color = textColor;
@@ -73,7 +73,7 @@ darkLight.onclick = () => {
     let darkMode = localStorage.getItem("theme");
     body.style.backgroundColor = darkMode;
     header.style.backgroundColor = darkMode;
-    
+
     ReturnShop.style.color = "black";
     btnUpdateCard.style.color = "black";
     btnUpdateCard.style.borderColor = "black";
@@ -85,7 +85,6 @@ darkLight.onclick = () => {
     size6.style.color = "black";
   }
 };
-
 
 btnBuy.onclick = () => {
   DialogBuy.showModal();
@@ -118,6 +117,8 @@ function deleteUser(id) {
   localStorage.setItem("data", JSON.stringify(product));
   pParseTotal.innerHTML = "$0";
   getData(product);
+  let totalCnt = product.reduce((sum, el) => sum + el.cnt, 0);
+  cntcart.innerHTML = totalCnt;
 }
 
 function cntPlus(e) {
@@ -128,6 +129,8 @@ function cntPlus(e) {
   }
   localStorage.setItem("data", JSON.stringify(product));
   getData(product);
+    let totalCnt = product.reduce((sum, el) => sum + el.cnt, 0);
+  cntcart.innerHTML = totalCnt;
 }
 
 function cntMinus(e) {
@@ -143,6 +146,8 @@ function cntMinus(e) {
 
   localStorage.setItem("data", JSON.stringify(product));
   getData(product);
+    let totalCnt = product.reduce((sum, el) => sum + el.cnt, 0);
+  cntcart.innerHTML = totalCnt;
 }
 
 function getData(data) {
@@ -161,7 +166,7 @@ function getData(data) {
     pName.classList.add("pName");
     pName.innerHTML = e.productName;
 
-    pName.style.color = "#a7a7a7"
+    pName.style.color = "#a7a7a7";
 
     let cnt = document.createElement("p");
     cnt.classList.add("cnt");
@@ -174,18 +179,17 @@ function getData(data) {
       cntPlus(e);
     };
 
-    
     let btnMinus = document.createElement("button");
     btnMinus.classList.add("btnMinus");
     btnMinus.innerHTML = "-";
     btnMinus.onclick = () => {
       cntMinus(e);
     };
-    
-    btnMinus.style.color = "#a7a7a7a7"
-    btnPlus.style.color = "#a7a7a7a7"
-    
-    btnPlus.style.color = "#a7a7a7a7"
+
+    btnMinus.style.color = "#a7a7a7a7";
+    btnPlus.style.color = "#a7a7a7a7";
+
+    btnPlus.style.color = "#a7a7a7a7";
 
     let pPrice = document.createElement("p");
     pPrice.classList.add("pPrice");
