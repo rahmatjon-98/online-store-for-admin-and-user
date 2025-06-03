@@ -8,11 +8,11 @@ let scrollLeft = document.querySelector(".scrollLeft");
 let cntcart = document.querySelector(".cntcart");
 
 scrollRight.onclick = () => {
-  box.scrollBy({ left: 280, behavior: "smooth" });
+  box.scrollBy({ left: 283, behavior: "smooth" });
 };
 
 scrollLeft.onclick = () => {
-  box.scrollBy({ left: -280, behavior: "smooth" });
+  box.scrollBy({ left: -283, behavior: "smooth" });
 };
 
 async function get() {

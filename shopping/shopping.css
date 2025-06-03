@@ -193,6 +193,7 @@ a:active {
     font-size: 20px;
     width: 40px;
     height: 40px;
+    padding: 0;
 }
 
 
@@ -464,18 +465,44 @@ a:active {
         left: calc(50% - -20px);
     }
 
-    .tdProduct {
-        width: 90px;
+
+    th,
+    td {
+        text-align: center;
+        width: 50px;
+        padding: 10px 0;
     }
 
-    th {
-        width: auto;
-        font-size: 15px;
+    .tdProduct {
+        width: 150px;
+        padding: 10px;
+    }
+
+    .tdQuantity {
+        width: 20px;
+    }
+
+    .divSubtotal {
+        padding: 10px;
+    }
+
+    .btndele {
+        margin: 0;
     }
 
     .pPrice,
     table {
         font-size: 15px;
+        padding: 5px;
+    }
+
+    .pPrice {
+        padding: 0;
+    }
+
+    th {
+        font-size: 15px;
+        width: 90px;
     }
 
     .pName {
@@ -487,6 +514,10 @@ a:active {
         font-size: 12px;
         width: 20px;
         height: 20px;
+    }
+
+    .divKOL{
+        gap: 2px;
     }
 
     .divBtn {

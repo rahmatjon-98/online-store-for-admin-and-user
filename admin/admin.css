@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap');
+
 * {
     margin: 0;
 }
+
+
 
 .header {
     display: flex;
     flex-direction: column;
     position: fixed;
-    width: 99%;
+    width: 97%;
     padding: 20px;
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
 }
@@ -71,6 +75,16 @@
     transform: scale(1.2);
 }
 
+.comfy {
+    position: absolute;
+    margin-right: 900px;
+    font-family: "Charm", cursive;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 40px;
+    padding-right: 100px;
+}
+
 .box {
     width: 80%;
     display: flex;
@@ -110,9 +124,22 @@
 
 dialog {
     margin: auto;
-    padding: 50px 100px;
+    padding: 50px ;
     border: none;
     border-radius: 5px;
+}
+
+.editColors,
+.addColors {
+    width: 143px;
+    border-radius: 5px;
+    padding: 5px;
+    min-height: 20px;
+    border: 1px solid black;
+    margin: 10px 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 button,
@@ -127,7 +154,7 @@ select {
 
 input {
     background-color: white;
-    width: 250px;
+    /* width: 180px; */
 }
 
 button {
@@ -208,32 +235,15 @@ button:hover {
     padding: 2px;
 }
 
-.infoColor{
-    display: flex; gap: 10px;
-}
-
-.addColors {
-    width: 225px;
-    border-radius: 5px;
-    padding: 5px;
-    height: 20px;
-    border: 1px solid black;
-    margin: 10px 0;
-    display: flex;
-    gap: 10px;
-}
-.editColors {
-    width: 225px;
-    border-radius: 5px;
-    padding: 5px;
-    height: 20px;
-    border: 1px solid black;
-    margin: 10px 0;
+.infoColor {
     display: flex;
     gap: 10px;
 }
 
-.divColor,.divinfocolor{
+
+
+.divColor,
+.divinfocolor {
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -262,6 +272,15 @@ select {
 
 .inpRange {
     width: 90%;
+}
+
+.btncolseadmin{
+    position: absolute;
+    margin-left: 900px;
+}
+.btncolseadmin:hover{
+    background-color: red;
+    border:  1px solid red;
 }
 
 /* From Uiverse.io by andrew-demchenk0 */
@@ -347,6 +366,7 @@ select {
 
     .center {
         flex-wrap: wrap;
+        gap: 5px;
     }
 
     .section {
@@ -356,12 +376,15 @@ select {
     .setting {
         width: 90%;
         margin: auto;
-        padding: 0px 10px;
+        padding:  10px;
         padding-top: 60px;
     }
 
     .darkLight {
-        margin: 0;
+        margin: 0 5px;
+    }
+    .btnNewProduct{
+        margin-right: 20px;
     }
 
     .inpSearch {
@@ -400,5 +423,18 @@ select {
 
     dialog {
         padding: 10px;
+    }
+
+    .editColors,
+    .addColors {
+        width: 180px;
+    }
+
+    .btncolseadmin{
+        padding: 2px;
+        margin-left: 350px;
+    }
+    .comfy{
+        display: none;
     }
 }

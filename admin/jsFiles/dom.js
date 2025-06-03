@@ -11,6 +11,11 @@ import {
   rangeChange,
 } from "./api.js";
 
+let admin = localStorage.getItem("admin");
+if (!admin) {
+  window.location = "./login/login.html";
+}
+
 let box = document.querySelector(".box");
 let body = document.querySelector(".body ");
 let header = document.querySelector(".header ");
@@ -23,6 +28,7 @@ let statusStatus = document.querySelector(".statusStatus");
 let searchCotegory = document.querySelector(".searchCotegory");
 let inpSearch = document.querySelector(".inpSearch");
 let btnNewProduct = document.querySelector(".btnNewProduct");
+let btncolseadmin = document.querySelector(".btncolseadmin");
 
 let dialog = document.querySelectorAll(".dialog");
 let info = document.querySelectorAll(".info");
@@ -51,6 +57,11 @@ let btnaddColorDel = document.querySelector(".btnaddColorDel");
 let editCreatenew = document.querySelector(".editCreatenew");
 let editColors = document.querySelector(".editColors");
 let btneditColorDel = document.querySelector(".btneditColorDel");
+
+btncolseadmin.onclick = () => {
+  localStorage.removeItem("admin");
+  window.location = "./login/login.html";
+};
 
 inpRange.onchange = () => {
   let maxNum = Number(inpRange.value);
@@ -137,9 +148,8 @@ btnSort.onclick = () => {
 
 btnNewProduct.onclick = () => {
   addDialog.showModal();
+  color = [];
 };
-
-let oldColor = [];
 
 let color = [];
 
@@ -157,7 +167,6 @@ btnaddColorDel.onclick = () => {
 };
 
 editCreatenew.onclick = () => {
-  color.push();
   color.push(editForm["editColor"].value);
   let divColor = document.createElement("div");
   divColor.classList.add("divColor");
@@ -172,7 +181,6 @@ btneditColorDel.onclick = () => {
 
 addForm.onsubmit = (ev) => {
   ev.preventDefault();
-
   let newProduct = {
     productName: ev.target["addName"].value,
     productImage: ev.target["addImage"].value,
@@ -185,11 +193,11 @@ addForm.onsubmit = (ev) => {
   };
   addProduct(newProduct);
   addDialog.close();
+  color = [];
 };
 
 editDialog.onsubmit = (ev) => {
   ev.preventDefault();
-
   let newProduct = {
     productName: ev.target["editName"].value,
     productImage: ev.target["editImage"].value,
@@ -201,7 +209,7 @@ editDialog.onsubmit = (ev) => {
   };
   editProduct(newProduct, idx);
   editDialog.close();
-  color = []
+  color = [];
 };
 
 export default function getData(data) {
@@ -252,13 +260,11 @@ export default function getData(data) {
       editForm["editDescription"].value = e.productDescription;
       editForm["editPrice"].value = e.productPrice;
 
-      color = color.concat(e.productColor);
-      console.log(color);
-      
+      color = [...e.productColor];
 
       editColors.innerHTML = "";
       e.productColor.forEach((e) => {
-        let divColor = document.createElement("divColor");
+        let divColor = document.createElement("div");
         divColor.classList.add("divColor");
         divColor.style.backgroundColor = e;
         editColors.append(divColor);
@@ -317,7 +323,6 @@ export function getInfo(e) {
   infoImage.src = e.productImage;
   infoDescription.innerHTML = `<b>description:</b> ${e.productDescription}`;
 
-  infoColor.append("color:");
   e.productColor.forEach((e) => {
     let divinfocolor = document.createElement("divinfocolor");
     divinfocolor.classList.add("divinfocolor");
@@ -335,4 +340,3 @@ export function getInfo(e) {
 
   infoDialog.showModal();
 }
-console.log(color);

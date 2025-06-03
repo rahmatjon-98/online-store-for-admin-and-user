@@ -10,12 +10,6 @@ let inpEmail = document.querySelector(".inpEmail");
 let inpPassword = document.querySelector(".inpPassword");
 let btnSign = document.querySelector(".btnSign");
 
-if (!inpName || !inpEmail || !inpPassword || !btnSign) {
-  console.error("Один из элементов не найден!");
-}else{
-    console.log("215468"); 
-}
-
 btnSign.onclick = async () => {
   try {
     let { data } = await axios.get(api);

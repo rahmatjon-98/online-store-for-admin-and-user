@@ -217,7 +217,8 @@ a:active {
 .pColors {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end ;
+    flex-wrap: wrap;
 }
 
 .pColor {
@@ -386,7 +387,8 @@ a:active {
         height: 200px;
     }
 
-    .div {
+    .divText {
         padding: 30px 0;
+        width: 300px;
     }
 }

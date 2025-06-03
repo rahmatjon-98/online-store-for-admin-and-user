@@ -13,6 +13,7 @@
 <body class="body">
     <div class="header">
         <div class="center">
+            <p class="comfy">comfy</p>
 
             <!-- From Uiverse.io by andrew-demchenk0 -->
             <label class="theme darkLight">
@@ -35,10 +36,15 @@
                     </path>
                 </svg>
             </label>
-
+            <a href="./login/login.html"></a>
             <input type="text" class="inpSearch" placeholder="Search...">
             <button class="btnNewProduct">New Product</button>
-
+            <button class="btncolseadmin"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+                </svg>
+            </button>
         </div>
     </div>
 
@@ -91,14 +97,12 @@
         <form class="addForm">
             <input type="text" name="addName" placeholder="Name..."><br><br>
             <input type="text" name="addImage" placeholder="Image..."><br><br>
-            <input type="text" name="addDescription" placeholder="Description..."><br>
+            <input type="text" name="addDescription" placeholder="Description..."><br><br>
 
-            <div style=" padding: 10px 0;">
-                <div style="display: flex; justify-content: space-between; width: 280px; padding: 10px 0;">
-                    <p>Color:</p>
-                    <button type="button" class="addCreatenew">Create New</button>
-                </div>
-                <input style="width: 280px;" type="color" name="addColor" placeholder="Color...">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p>Color:</p>
+                <input style="width: 40px; padding: 5px;" type="color" name="addColor" placeholder="Color...">
+                <button type="button" class="addCreatenew">Create New</button>
             </div>
             <div style="display: flex; align-items: center;">
                 <div class="addColors"></div>
@@ -125,12 +129,10 @@
             <input type="text" name="editImage" placeholder="Image..."><br><br>
             <input type="text" name="editDescription" placeholder="Description..."><br><br>
 
-            <div style=" padding: 10px 0;">
-                <div style="display: flex; justify-content: space-between; width: 280px; padding: 10px 0;">
-                    <p>Color:</p>
-                    <button type="button" class="editCreatenew">Create New</button>
-                </div>
-                <input style="width: 280px;" type="color" name="editColor" placeholder="Color...">
+            <div style="display: flex; justify-content: space-between;align-items: center; ">
+                <p>Color:</p>
+                <input style="width: 40px; padding: 5px;" type="color" name="editColor" placeholder="Color...">
+                <button type="button" class="editCreatenew">Create New</button>
             </div>
             <div style="display: flex; align-items: center;">
                 <div class="editColors"></div>
@@ -150,7 +152,7 @@
     </dialog>
 
 
-    
+
     <dialog class="infoDialog dialog">
         <div class="infodiv">
             <img class="infoImage"></img>
@@ -158,7 +160,10 @@
                 <div>
                     <p class="info infoName"></p>
                     <p class="infoDescription"></p>
-                    <div class="info infoColor"></div>
+                    <div style="display: flex;">
+                        <b style="padding: 5px;" class="info">colors: </b>
+                        <div class="info infoColor"></div>
+                    </div>
                     <p class="info infoCotegory"></p>
                     <p class="infoPrice"></p>
                     <p class="infoStatus"></p>
